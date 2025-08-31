@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
 @custom-variant dark (&:is(.dark *));
 
+/* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
 @theme inline {
   --font-inter: "Inter", serif;
 
@@ -64,9 +66,11 @@
 
 @layer base {
   * {
+    /* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
     @apply border-border outline-ring/50;
   }
   body {
+    /* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
     @apply bg-background text-foreground font-inter;
   }
 }
