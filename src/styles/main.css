@@ -1,7 +1,6 @@
 @import "tailwindcss";
-
 /* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
-@custom-variant dark (&:is(.dark *));
+@plugin "@tailwindcss/typography";
 
 /* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
 @theme inline {
@@ -34,6 +33,8 @@
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
+
+  --breakpoint-mobile: 420px;
 }
 
 @layer base {
@@ -72,5 +73,27 @@
   body {
     /* biome-ignore lint/suspicious/noUnknownAtRules: TailwindCSS v4 at rule */
     @apply bg-background text-foreground font-inter;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 5px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
